@@ -181,10 +181,10 @@ const config: TestConfig = {
 
 type Role = "admin" | "tester" | "viewer"
 
-interface TestUser {
-    id: number,
-    username: string,
-    password: string,
-    role: Role,
-    active: boolean
-}
+// interface TestUser {
+//     id: number,
+//     username: string,
+//     password: string,
+//     role: Role,
+//     active: boolean
+// }
