@@ -1,100 +1,100 @@
-// Ejercicio A — Variables
+// // Ejercicio A — Variables
 
-// Declara:
+// // Declara:
 
-// username → "qa_masuel"
-// age → 25
-// isQaEngineer → true
+// // username → "qa_masuel"
+// // age → 25
+// // isQaEngineer → true
 
-const username: string = "qa_masuel"; 
-const age: number = 25; 
-const isQaEngineer: boolean = true;
+// const username: string = "qa_masuel"; 
+// const age: number = 25; 
+// const isQaEngineer: boolean = true;
 
-// Usa const cuando corresponda.
+// // Usa const cuando corresponda.
 
-// Ejercicio B — Automatización
+// // Ejercicio B — Automatización
 
-// Crea estas variables:
+// // Crea estas variables:
 
-// browser
-// environment
-// timeout
-// testPassed
+// // browser
+// // environment
+// // timeout
+// // testPassed
 
-// Con valores:
+// // Con valores:
 
-// chromium
-// QA
-// 30000
-// true
+// // chromium
+// // QA
+// // 30000
+// // true
 
-const browser: string = "chromium";
-const environment: string = "QA"; 
-const timeout: number = 30000; 
-const testPassed: boolean = true;
+// const browser: string = "chromium";
+// const environment: string = "QA"; 
+// const timeout: number = 30000; 
+// const testPassed: boolean = true;
 
-// Declara los tipos explícitamente.
+// // Declara los tipos explícitamente.
 
-// Ejercicio C — Array
+// // Ejercicio C — Array
 
-// Crea un array llamado:
+// // Crea un array llamado:
 
-// supportedBrowsers
+// // supportedBrowsers
 
-// que contenga:
+// // que contenga:
 
-// chromium
-// firefox
-// webkit
+// // chromium
+// // firefox
+// // webkit
 
-const supportedBrowsers: string[] = [ 
-    "chromium", 
-    "firefox", 
-    "webkit" 
-];
+// const supportedBrowsers: string[] = [ 
+//     "chromium", 
+//     "firefox", 
+//     "webkit" 
+// ];
 
-// El array debe aceptar únicamente strings.
+// // El array debe aceptar únicamente strings.
 
-// Ejercicio D — Function
+// // Ejercicio D — Function
 
-// Crea una función:
+// // Crea una función:
 
-// calculateRetries
+// // calculateRetries
 
-// que reciba:
+// // que reciba:
 
-// maxRetries
+// // maxRetries
 
-// como number y devuelva ese número multiplicado por 2.
+// // como number y devuelva ese número multiplicado por 2.
 
-// Ejemplo:
+// // Ejemplo:
 
-// calculateRetries(3)
-// → 6
+// // calculateRetries(3)
+// // → 6
 
-function calculateRetries(maxRetries: number): number { 
-    return maxRetries * 2; 
-}
+// function calculateRetries(maxRetries: number): number { 
+//     return maxRetries * 2; 
+// }
 
 
-// El retorno debe estar tipado.
+// // El retorno debe estar tipado.
 
-// Ejercicio E — QA
+// // Ejercicio E — QA
 
-// Crea una función:
+// // Crea una función:
 
-// isSuccessfulResponse
+// // isSuccessfulResponse
 
-// que reciba un:
+// // que reciba un:
 
-// statusCode: number
+// // statusCode: number
 
-// y devuelva:
+// // y devuelva:
 
-// true
+// // true
 
-function isSuccessfulResponse(statusCode: number): boolean { 
-    return statusCode === 200; 
-}
+// function isSuccessfulResponse(statusCode: number): boolean { 
+//     return statusCode === 200; 
+// }
 
-// cuando el código sea 200, y false en cualquier otro caso.
+// // cuando el código sea 200, y false en cualquier otro caso.

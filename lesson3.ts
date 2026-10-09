@@ -1,194 +1,194 @@
-// Ejercicio A — Function
+// // Ejercicio A — Function
 
-// Crea una función:
+// // Crea una función:
 
-// calculateTestTimeout
+// // calculateTestTimeout
 
-// Debe recibir:
+// // Debe recibir:
 
-// baseTimeout: number
+// // baseTimeout: number
 
-// y devolver:
+// // y devolver:
 
-// baseTimeout + 5000
+// // baseTimeout + 5000
 
-// Ejemplo:
+// // Ejemplo:
 
-// calculateTestTimeout(30000)
-// → 35000
+// // calculateTestTimeout(30000)
+// // → 35000
 
-// El retorno debe estar tipado.
+// // El retorno debe estar tipado.
 
-function calculateTestTimeout(baseTimeout: number): number {
-    return baseTimeout + 5000
-}
+// function calculateTestTimeout(baseTimeout: number): number {
+//     return baseTimeout + 5000
+// }
  
-// Ejercicio B — Parámetro opcional
+// // Ejercicio B — Parámetro opcional
 
-// Crea una función:
+// // Crea una función:
 
-// getBrowserName
+// // getBrowserName
 
-// Debe recibir un parámetro opcional:
+// // Debe recibir un parámetro opcional:
 
-// browser
+// // browser
 
-// de tipo Browser.
+// // de tipo Browser.
 
-// Recuerda que ya tienes:
+// // Recuerda que ya tienes:
 
-// type Browser = "chromium" | "firefox" | "webkit";
+// // type Browser = "chromium" | "firefox" | "webkit";
 
-// La función debe devolver:
+// // La función debe devolver:
 
-// "Browser: chromium"
+// // "Browser: chromium"
 
-// cuando reciba:
+// // cuando reciba:
 
-// "chromium"
+// // "chromium"
 
-// Y cuando no reciba nada:
+// // Y cuando no reciba nada:
 
-// "Browser: chromium"
+// // "Browser: chromium"
 
-// Es decir, chromium será el valor por defecto.
+// // Es decir, chromium será el valor por defecto.
 
-// Aquí quiero que combines:
+// // Aquí quiero que combines:
 
-// optional/default parameter
-// +
-// Browser type
+// // optional/default parameter
+// // +
+// // Browser type
 
-function getBrowserName(browser: Browser = "chromium"): string {
-    return `Browser: ${browser}`;
-}
+// function getBrowserName(browser: Browser = "chromium"): string {
+//     return `Browser: ${browser}`;
+// }
 
-// Ejercicio C — Arrow Function
+// // Ejercicio C — Arrow Function
 
-// Crea una Arrow Function:
+// // Crea una Arrow Function:
 
-// isSuccessfulResponse
+// // isSuccessfulResponse
 
-// que reciba:
+// // que reciba:
 
-// statusCode: number
+// // statusCode: number
 
-// y devuelva true únicamente cuando sea 200.
+// // y devuelva true únicamente cuando sea 200.
 
-// Hazla utilizando Arrow Function, no function.
+// // Hazla utilizando Arrow Function, no function.
 
-const isSuccesfulResponse = (statusCode: number): boolean => {
-    return statusCode === 200
-};
+// const isSuccesfulResponse = (statusCode: number): boolean => {
+//     return statusCode === 200
+// };
 
-// Ejercicio D — Arrow Function + Array
+// // Ejercicio D — Arrow Function + Array
 
-// Tenemos:
+// // Tenemos:
+
+// // const browsers: Browser[] = [
+// //     "chromium",
+// //     "firefox",
+// //     "webkit"
+// // ];
+
+// // Crea una nueva variable:
+
+// // uppercaseBrowsers
+
+// // que contenga:
+
+// // CHROMIUM
+// // FIREFOX
+// // WEBKIT
+
+// // Utiliza:
+
+// // map()
+
+// // y una Arrow Function.
+
+// // Este ejercicio es importante porque map() aparecerá muchísimo en código TypeScript.
 
 // const browsers: Browser[] = [
 //     "chromium",
 //     "firefox",
 //     "webkit"
-// ];
+// ]
 
-// Crea una nueva variable:
+// const uppercaseBrowsers = browsers.map(browser => browser.toUpperCase());
 
-// uppercaseBrowsers
+// // 🔥 Ejercicio E — Async/Await
 
-// que contenga:
+// // Crea esta función:
 
-// CHROMIUM
-// FIREFOX
-// WEBKIT
+// // getApiStatus
 
-// Utiliza:
+// // Debe ser:
 
-// map()
+// // async
 
-// y una Arrow Function.
+// // y devolver:
 
-// Este ejercicio es importante porque map() aparecerá muchísimo en código TypeScript.
+// // 200
 
-const browsers: Browser[] = [
-    "chromium",
-    "firefox",
-    "webkit"
-]
+// // El tipo de retorno debe ser:
 
-const uppercaseBrowsers = browsers.map(browser => browser.toUpperCase());
+// // Promise<number>
 
-// 🔥 Ejercicio E — Async/Await
+// // Luego crea otra función:
 
-// Crea esta función:
+// // validateApi
 
-// getApiStatus
+// // que sea también async y utilice:
 
-// Debe ser:
+// // await getApiStatus()
 
-// async
+// // para obtener el status.
 
-// y devolver:
+// // Después debe imprimir:
 
-// 200
+// // API is available
 
-// El tipo de retorno debe ser:
+// // si el status es 200.
 
-// Promise<number>
+// async function getApiStatus(): Promise<number> {
+//     return 200
+// }
 
-// Luego crea otra función:
+// async function validateApi(): Promise<void> {
+//     const apiStatus = await getApiStatus()
 
-// validateApi
+//     if (apiStatus === 200){
+//         console.log("API is available")
+//     }else {
+//          console.log("API is not available")
+//     }
+// }
 
-// que sea también async y utilice:
+// // 🏆 Bonus — Mentalidad Playwright
 
-// await getApiStatus()
+// // Sin usar Playwright todavía, intenta crear:
 
-// para obtener el status.
+// // const login = async (username: string, password: string): Promise<boolean> => {
+// //     // ...
+// // };
 
-// Después debe imprimir:
+// // La función debe devolver:
 
-// API is available
+// // true
 
-// si el status es 200.
+// // cuando:
 
-async function getApiStatus(): Promise<number> {
-    return 200
-}
+// // username === "qa_masuel"
 
-async function validateApi(): Promise<void> {
-    const apiStatus = await getApiStatus()
+// // y:
 
-    if (apiStatus === 200){
-        console.log("API is available")
-    }else {
-         console.log("API is not available")
-    }
-}
+// // password === "Password123"
 
-// 🏆 Bonus — Mentalidad Playwright
+// // En cualquier otro caso:
 
-// Sin usar Playwright todavía, intenta crear:
+// // false
 
 // const login = async (username: string, password: string): Promise<boolean> => {
-//     // ...
-// };
-
-// La función debe devolver:
-
-// true
-
-// cuando:
-
-// username === "qa_masuel"
-
-// y:
-
-// password === "Password123"
-
-// En cualquier otro caso:
-
-// false
-
-const login = async (username: string, password: string): Promise<boolean> => {
-    return username === "qa_masuel" && password === "Password123"
-}
+//     return username === "qa_masuel" && password === "Password123"
+// }
