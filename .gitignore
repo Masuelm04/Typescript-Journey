@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+
+# Compiled JavaScript
+dist/
+build/
+*.js
+*.js.map
+
+# Logs
+logs/
+*.log
+
+# Environment variables
+.env
+.env.*
+
+# VS Code
+.vscode/
+
+# Coverage reports
+coverage/
+
+# OS files
+.DS_Store
+Thumbs.db
