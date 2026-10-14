@@ -1,179 +1,179 @@
-// Utiliza este dataset:
+// // Utiliza este dataset:
 
-type Rol = "admin" | "tester" | "viewer";
+// type Rol = "admin" | "tester" | "viewer";
 
-interface TestUser {
-    id: number;
-    username: string;
-    role: Rol;
-    active: boolean;
-}
+// interface TestUser {
+//     id: number;
+//     username: string;
+//     role: Rol;
+//     active: boolean;
+// }
 
-const users: TestUser[] = [
-    {
-        id: 1,
-        username: "carlo",
-        role: "tester",
-        active: true
-    },
-    {
-        id: 2,
-        username: "alicia",
-        role: "admin",
-        active: true
-    },
-    {
-        id: 3,
-        username: "kiara",
-        role: "viewer",
-        active: false
-    },
-    {
-        id: 4,
-        username: "luka",
-        role: "tester",
-        active: true
-    }
-];
-// Ejercicio A — forEach()
+// const users: TestUser[] = [
+//     {
+//         id: 1,
+//         username: "carlo",
+//         role: "tester",
+//         active: true
+//     },
+//     {
+//         id: 2,
+//         username: "alicia",
+//         role: "admin",
+//         active: true
+//     },
+//     {
+//         id: 3,
+//         username: "kiara",
+//         role: "viewer",
+//         active: false
+//     },
+//     {
+//         id: 4,
+//         username: "luka",
+//         role: "tester",
+//         active: true
+//     }
+// ];
+// // Ejercicio A — forEach()
 
-// Recorre users utilizando forEach() e imprime:
+// // Recorre users utilizando forEach() e imprime:
 
-// User: carlo
-// User: alicia
-// User: kiara
-// User: luka
+// // User: carlo
+// // User: alicia
+// // User: kiara
+// // User: luka
 
-const usuario = users.forEach(user => {console.log(`User: ${user.username}`)});
+// const usuario = users.forEach(user => {console.log(`User: ${user.username}`)});
 
-// Ejercicio B — map()
+// // Ejercicio B — map()
 
-// Crea:
+// // Crea:
 
-// usernames
+// // usernames
 
-// que contenga:
+// // que contenga:
 
-// ["carlo", "alicia", "kiara", "luka"]
+// // ["carlo", "alicia", "kiara", "luka"]
 
-const usernames = users.map(user => user.username)
+// const usernames = users.map(user => user.username)
 
-// Utiliza map().
+// // Utiliza map().
 
-// Ejercicio C — filter()
+// // Ejercicio C — filter()
 
-// Crea:
+// // Crea:
 
-// activeUsers
+// // activeUsers
 
-// que contenga únicamente los usuarios activos.
+// // que contenga únicamente los usuarios activos.
 
-// ¿Cuántos deberían quedar?
+// // ¿Cuántos deberían quedar?
 
-// 3
+// // 3
 
-const activeUsers = users.filter(user => user.active)
+// const activeUsers = users.filter(user => user.active)
 
-// Ejercicio D — find()
+// // Ejercicio D — find()
 
-// Busca:
+// // Busca:
 
-// alicia
+// // alicia
 
-// utilizando find().
+// // utilizando find().
 
-// Guarda el resultado en:
+// // Guarda el resultado en:
 
-// adminUser
+// // adminUser
 
-// Luego imprime su username.
+// // Luego imprime su username.
 
-// Recuerda que find() puede devolver undefined.
+// // Recuerda que find() puede devolver undefined.
 
-const adminUser = users.find(user => user.username === "alicia")
+// const adminUser = users.find(user => user.username === "alicia")
 
-console.log(adminUser?.username)
+// console.log(adminUser?.username)
 
-// Ejercicio E — some()
+// // Ejercicio E — some()
 
-// Crea:
+// // Crea:
 
-// hasViewer
+// // hasViewer
 
-// que indique si existe al menos un usuario con role:
+// // que indique si existe al menos un usuario con role:
 
-// viewer
+// // viewer
 
-// Debe devolver:
+// // Debe devolver:
 
-// true
+// // true
 
-const hasViewer = users.some(user => user.role === "viewer")
-console.log(hasViewer)
+// const hasViewer = users.some(user => user.role === "viewer")
+// console.log(hasViewer)
 
-// Ejercicio F — every()
+// // Ejercicio F — every()
 
-// Crea:
+// // Crea:
 
-// allUsersActive
+// // allUsersActive
 
-// que indique si todos los usuarios están activos.
+// // que indique si todos los usuarios están activos.
 
-// Debe devolver:
+// // Debe devolver:
 
-// false
+// // false
 
-const allUsersActive = users.every(user => user.active)
-console.log(allUsersActive)
+// const allUsersActive = users.every(user => user.active)
+// console.log(allUsersActive)
 
-// 🔥 Ejercicio G — QA Automation
+// // 🔥 Ejercicio G — QA Automation
 
-// Ahora una situación más realista.
+// // Ahora una situación más realista.
 
-// Queremos obtener los usernames de todos los testers activos.
+// // Queremos obtener los usernames de todos los testers activos.
 
-// El resultado debe ser:
+// // El resultado debe ser:
 
-// ["carlo", "luka"]
+// // ["carlo", "luka"]
 
-// Pero quiero que lo hagas utilizando:
+// // Pero quiero que lo hagas utilizando:
 
-// filter()
-// +
-// map()
+// // filter()
+// // +
+// // map()
 
-// Es decir:
+// // Es decir:
 
-// users
-//  ↓
-// ¿active?
-//  ↓
-// ¿tester?
-//  ↓
-// username
+// // users
+// //  ↓
+// // ¿active?
+// //  ↓
+// // ¿tester?
+// //  ↓
+// // username
 
-const activeTesterUsernames  = users.filter(user => user.active && user.role === "tester").map(user => user.username)
-console.log(activeTesterUsernames )
+// const activeTesterUsernames  = users.filter(user => user.active && user.role === "tester").map(user => user.username)
+// console.log(activeTesterUsernames )
 
-// 🧠 Bonus — API Testing
+// // 🧠 Bonus — API Testing
 
-// Imagina que esta variable representa una respuesta de una API:
+// // Imagina que esta variable representa una respuesta de una API:
 
-const apiUsers = users;
+// const apiUsers = users;
 
-// Queremos validar:
+// // Queremos validar:
 
-// "La respuesta contiene al menos un usuario administrador activo."
+// // "La respuesta contiene al menos un usuario administrador activo."
 
-// Crea:
+// // Crea:
 
-// hasActiveAdmin
+// // hasActiveAdmin
 
-// utilizando una combinación de some() y una condición.
+// // utilizando una combinación de some() y una condición.
 
-// Debe devolver:
+// // Debe devolver:
 
-// true
+// // true
 
-const hasActiveAdmin = apiUsers.some(user => user.role === "admin" && user.active)
-console.log(hasActiveAdmin)
+// const hasActiveAdmin = apiUsers.some(user => user.role === "admin" && user.active)
+// console.log(hasActiveAdmin)

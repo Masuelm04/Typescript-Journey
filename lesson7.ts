@@ -61,29 +61,29 @@ console.log(`Active: ${testAccount.isActive()}`);
 
 // Crea una instancia activa, imprime su resumen, desactívala e imprime el resumen nuevamente.
 
-class TestUser {
-    public username: string;
-    public active: boolean;
+// class TestUser {
+//     public username: string;
+//     public active: boolean;
 
-    constructor(username: string, active: boolean) {
-        this.username = username;
-        this.active = active;
-    }
+//     constructor(username: string, active: boolean) {
+//         this.username = username;
+//         this.active = active;
+//     }
 
-    getSummary(): string {
-        return `User: ${this.username}, active: ${this.active}`;
-    }
+//     getSummary(): string {
+//         return `User: ${this.username}, active: ${this.active}`;
+//     }
 
-    deactivate(): void {
-        this.active = false;
-    }
-}
+//     deactivate(): void {
+//         this.active = false;
+//     }
+// }
 
-const user = new TestUser("carlo", true);
+// const user = new TestUser("carlo", true);
 
-console.log(user.getSummary());
-user.deactivate();
-console.log(user.getSummary());
+// console.log(user.getSummary());
+// user.deactivate();
+// console.log(user.getSummary());
 
 // Ejercicio C — Herencia
 
