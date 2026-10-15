@@ -1,298 +1,298 @@
-// // Utiliza este dataset:
+// Utiliza este dataset:
 
-// type Role = "admin" | "tester" | "viewer";
+type Role = "admin" | "tester" | "viewer";
 
-// interface TestUser {
-//     id: number;
-//     username: string;
-//     role: Role;
-//     active: boolean;
-//     profile?: {
-//         email?: string;
-//     };
-// }
+interface TestUser {
+    id: number;
+    username: string;
+    role: Role;
+    active: boolean;
+    profile?: {
+        email?: string;
+    };
+}
 
-// const user: TestUser = {
-//     id: 1,
-//     username: "carlo",
-//     role: "tester",
-//     active: true,
-//     profile: {
-//         email: "carlo@gmail.com"
-//     }
-// };
-// // Ejercicio A — Object Destructuring
+const user: TestUser = {
+    id: 1,
+    username: "carlo",
+    role: "tester",
+    active: true,
+    profile: {
+        email: "carlo@gmail.com"
+    }
+};
+// Ejercicio A — Object Destructuring
 
-// // Extrae mediante destructuring:
+// Extrae mediante destructuring:
 
-// // username
-// // role
-// // active
+// username
+// role
+// active
 
-// // desde user.
+// desde user.
 
-// // Después imprime:
+// Después imprime:
 
-// // Username: carlo
-// // Role: tester
-// // Active: true
+// Username: carlo
+// Role: tester
+// Active: true
 
-// const { username, role, active } = user;
+const { username, role, active } = user;
 
-// console.log(`Username: ${username}`)
-// console.log(`Role: ${role}`)
-// console.log(`Active: ${active}`)
+console.log(`Username: ${username}`)
+console.log(`Role: ${role}`)
+console.log(`Active: ${active}`)
 
-// // Ejercicio B — Array Destructuring
+// Ejercicio B — Array Destructuring
 
-// type Browser = "chromium" | "firefox" | "webkit"
+type Browser = "chromium" | "firefox" | "webkit"
 
-// // Crea:
+// Crea:
 
-// const browsers: Browser[] = [
-//     "chromium",
-//     "firefox",
-//     "webkit"
-// ];
+const browsers: Browser[] = [
+    "chromium",
+    "firefox",
+    "webkit"
+];
 
-// // Utiliza destructuring para obtener:
+// Utiliza destructuring para obtener:
 
-// // firstBrowser
-// // secondBrowser
+// firstBrowser
+// secondBrowser
 
-// // Los valores deben ser:
+// Los valores deben ser:
 
-// // chromium
-// // firefox
+// chromium
+// firefox
 
-// const [ firstBrowser, secondBrowser ] = browsers;
+const [ firstBrowser, secondBrowser ] = browsers;
 
-// console.log(firstBrowser)
-// console.log(secondBrowser)
+console.log(firstBrowser)
+console.log(secondBrowser)
 
-// // Ejercicio C — Spread Operator
+// Ejercicio C — Spread Operator
 
-// // Crea:
+// Crea:
 
-// // inactiveUser
+// inactiveUser
 
-// // a partir de user, utilizando ...user.
+// a partir de user, utilizando ...user.
 
-// // El resultado debe tener:
+// El resultado debe tener:
 
-// // username → carlo
-// // role     → tester
-// // active   → false
+// username → carlo
+// role     → tester
+// active   → false
 
-// // El objeto original user debe permanecer con:
+// El objeto original user debe permanecer con:
 
-// // active → true
+// active → true
 
-// const inactiveUser = {
-//     ...user,
-//     active: false
-// };
+const inactiveUser = {
+    ...user,
+    active: false
+};
 
-// console.log(`Username: ${inactiveUser.username}`)
-// console.log(`Role: ${inactiveUser.role}`)
-// console.log(`Active: ${inactiveUser.active}`)
+console.log(`Username: ${inactiveUser.username}`)
+console.log(`Role: ${inactiveUser.role}`)
+console.log(`Active: ${inactiveUser.active}`)
 
-// // Ejercicio D — Rest Parameters
+// Ejercicio D — Rest Parameters
 
-// // Crea una función:
+// Crea una función:
 
-// // logBrowsers
+// logBrowsers
 
-// // que reciba cualquier cantidad de valores Browser.
+// que reciba cualquier cantidad de valores Browser.
 
-// // Ejemplo:
-
-// // logBrowsers("chromium", "firefox", "webkit");
-
-// // Debe imprimir:
-
-// // Browser: chromium
-// // Browser: firefox
-// // Browser: webkit
-
-// // Utiliza:
-
-// // ...browsers
-
-// // como Rest Parameter.
-
-// function logBrowsers(...browsers: Browser[]): void {
-//     browsers.forEach(browser => {console.log(`Browser: ${browser}`)})
-// } 
+// Ejemplo:
 
 // logBrowsers("chromium", "firefox", "webkit");
 
-// // Ejercicio E — Optional Chaining
+// Debe imprimir:
 
-// // Crea:
+// Browser: chromium
+// Browser: firefox
+// Browser: webkit
 
-// // userWithoutProfile
+// Utiliza:
 
-// // utilizando TestUser, pero sin profile.
+// ...browsers
 
-// // Después intenta obtener:
+// como Rest Parameter.
 
-// // email
+function logBrowsers(...browsers: Browser[]): void {
+    browsers.forEach(browser => {console.log(`Browser: ${browser}`)})
+} 
 
-// // utilizando:
+logBrowsers("chromium", "firefox", "webkit");
 
-// // ?.
+// Ejercicio E — Optional Chaining
 
-// // El resultado debería ser:
+// Crea:
 
-// // undefined
+// userWithoutProfile
 
-// // No debe producir un error.
+// utilizando TestUser, pero sin profile.
 
-// const userWithoutProfile: TestUser = {
-//     id: 2,
-//     username: "carlo",
-//     role: "tester",
-//     active: true
-// }
+// Después intenta obtener:
 
-// console.log(`Email: ${userWithoutProfile.profile?.email}`)
+// email
 
-// // Ejercicio F — ??
+// utilizando:
 
-// // Utilizando userWithoutProfile, crea:
+// ?.
 
-// // displayEmail
+// El resultado debería ser:
 
-// // que produzca:
+// undefined
 
-// // "No email available"
+// No debe producir un error.
 
-// // cuando el email no exista.
+const userWithoutProfile: TestUser = {
+    id: 2,
+    username: "carlo",
+    role: "tester",
+    active: true
+}
 
-// // Debes combinar:
+console.log(`Email: ${userWithoutProfile.profile?.email}`)
 
-// // ?.
-// // +
-// // ??
+// Ejercicio F — ??
 
-// const displayEmail = userWithoutProfile.profile?.email ?? "No email available"
+// Utilizando userWithoutProfile, crea:
 
-// console.log(`Email: ${displayEmail}`)
+// displayEmail
 
-// // 🔥 Ejercicio G — QA Automation
+// que produzca:
 
-// // Ahora uno más cercano a lo que haremos en WorkforceQA.
+// "No email available"
 
-// // Tenemos:
+// cuando el email no exista.
 
-// const defaultUser: TestUser = {
-//     id: 1,
-//     username: "qa_user",
-//     role: "tester",
-//     active: true,
-//     profile: {
-//         email: "qa_user@test.com"
-//     }
-// };
+// Debes combinar:
 
-// // Crea mediante Spread Operator:
+// ?.
+// +
+// ??
 
-// // adminUser
-// // inactiveUser
-// // viewerUser
+const displayEmail = userWithoutProfile.profile?.email ?? "No email available"
 
-// // Partiendo de defaultUser.
+console.log(`Email: ${displayEmail}`)
 
-// // Deben producir:
+// 🔥 Ejercicio G — QA Automation
 
-// // adminUser
-// // → role: "admin"
-// // → active: true
+// Ahora uno más cercano a lo que haremos en WorkforceQA.
 
-// // inactiveUser
-// // → role: "tester"
-// // → active: false
+// Tenemos:
 
-// // viewerUser
-// // → role: "viewer"
-// // → active: true
+const defaultUser: TestUser = {
+    id: 1,
+    username: "qa_user",
+    role: "tester",
+    active: true,
+    profile: {
+        email: "qa_user@test.com"
+    }
+};
 
-// // No copies el objeto completo tres veces.
+// Crea mediante Spread Operator:
 
-// // La idea es:
+// adminUser
+// inactiveUser
+// viewerUser
 
-// // defaultUser
-// //      ↓
-// //     ... 
-// //      ↓
-// // variaciones de test data
+// Partiendo de defaultUser.
 
-// const adminUser = {
-//     ...defaultUser,
-//     role: "admin",
-// }
+// Deben producir:
 
-// const inctiveUser = {
-//     ...defaultUser,
-//     active: false
-// }
+// adminUser
+// → role: "admin"
+// → active: true
 
-// const viewerUser = {
-//     ...defaultUser,
-//     role: "viewer",
-// }
+// inactiveUser
+// → role: "tester"
+// → active: false
 
-// // 🧠 Bonus — empieza a pensar como framework developer
+// viewerUser
+// → role: "viewer"
+// → active: true
 
-// // Supón que tienes:
+// No copies el objeto completo tres veces.
 
-// const apiResponse = {
-//     status: 200,
-//     data: {
-//         user: {
-//             username: "qa_masuel",
-//             email: "qa@test.com"
-//         }
-//     }
-// };
+// La idea es:
 
-// // Quiero que extraigas mediante nested destructuring:
+// defaultUser
+//      ↓
+//     ... 
+//      ↓
+// variaciones de test data
 
-// // status
-// // username
-// // email
+const adminUser = {
+    ...defaultUser,
+    role: "admin",
+}
 
-// // y luego crees:
+const inctiveUser = {
+    ...defaultUser,
+    active: false
+}
 
-// // userData
+const viewerUser = {
+    ...defaultUser,
+    role: "viewer",
+}
 
-// // utilizando Spread Operator, agregándole:
+// 🧠 Bonus — empieza a pensar como framework developer
 
-// // role: "tester"
+// Supón que tienes:
 
-// // Aquí tendrás que combinar:
+const apiResponse = {
+    status: 200,
+    data: {
+        user: {
+            username: "qa_masuel",
+            email: "qa@test.com"
+        }
+    }
+};
 
-// // nested destructuring
-// // +
-// // spread
+// Quiero que extraigas mediante nested destructuring:
 
-// const {
-//     status,
-//     data: {
-//         user: {
-//             username,
-//             email
-//         }
-//     }
-// } = apiResponse;
+// status
+// username
+// email
 
-// const userData = {
-//     ...apiResponse.data.user,
-//     role: "tester"
-// };
+// y luego crees:
 
-// console.log(status)
-// console.log(username)
-// console.log(email)
-// console.log(userData)
+// userData
+
+// utilizando Spread Operator, agregándole:
+
+// role: "tester"
+
+// Aquí tendrás que combinar:
+
+// nested destructuring
+// +
+// spread
+
+const {
+    status,
+    data: {
+        user: {
+            username,
+            email
+        }
+    }
+} = apiResponse;
+
+const userData = {
+    ...apiResponse.data.user,
+    role: "tester"
+};
+
+console.log(status)
+console.log(username)
+console.log(email)
+console.log(userData)
